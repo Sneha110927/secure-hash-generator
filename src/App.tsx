@@ -6,7 +6,7 @@ import Features from "./components/Features";
 import Algorithms from "./components/Algorithms";
 import Stats from "./components/Stats";
 import Footer from "./components/Footer";
-import Chatbot from "./components/Chatbot";
+import ChatBot from "./components/ChatBot";
 import "./styles.css";
 
 export default function App() {
@@ -20,7 +20,7 @@ export default function App() {
       <Algorithms />
       <Stats />
       <Footer />
-      <Chatbot />
+      <ChatBot />
     </main>
   );
 }
