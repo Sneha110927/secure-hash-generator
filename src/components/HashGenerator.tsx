@@ -15,7 +15,7 @@ export default function HashGenerator() {
   const [text, setText] = useState("");
   const [algorithm, setAlgorithm] = useState<HashAlgorithm>("bcrypt");
   const [output, setOutput] = useState(
-    "$2b$10$crC3H1MtLiqJ7Sa6fJyAEeJuBG8BfDSAQot/2CY66qdE7V7rDQ0iq"
+    ""
   );
 
   const handleGenerate = async () => {
