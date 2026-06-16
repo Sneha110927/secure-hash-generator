@@ -1,6 +1,14 @@
-import { Code2, LockKeyhole, Shield } from "lucide-react";
+import { LockKeyhole, Mail, Shield } from "lucide-react";
 
 export default function Footer() {
+  const openDocs = (tab: "intro" | "algorithms" | "usage" | "api") => {
+    window.dispatchEvent(new CustomEvent("open-docs", { detail: tab }));
+  };
+
+  const openHelp = () => {
+    window.dispatchEvent(new CustomEvent("open-help"));
+  };
+
   return (
     <footer className="site-footer" id="about">
       <div className="footer-main">
@@ -22,24 +30,44 @@ export default function Footer() {
           <h3>Quick Links</h3>
           <a href="#home">Home</a>
           <a href="#algorithms">Algorithms</a>
-          <a href="#docs">Documentation</a>
-          <a href="#api">API</a>
+
+          <button onClick={() => openDocs("intro")} className="footer-link-btn">
+            Documentation
+          </button>
+
+          <button onClick={() => openDocs("api")} className="footer-link-btn">
+            API
+          </button>
         </div>
 
         <div className="footer-column">
           <h3>Resources</h3>
-          <a href="#docs">Security Guide</a>
-          <a href="#docs">Best Practices</a>
-          <a href="#docs">FAQ</a>
-          <a href="#docs">Support</a>
+
+          <button onClick={() => openDocs("api")} className="footer-link-btn">
+            Security Guide
+          </button>
+
+          <button onClick={() => openDocs("usage")} className="footer-link-btn">
+            Best Practices
+          </button>
+
+          <button onClick={openHelp} className="footer-link-btn">
+            FAQ
+          </button>
+
+          <a href="mailto:jhawarsneha11@gmail.com">Email Support</a>
         </div>
 
         <div className="footer-column">
           <h3>Connect</h3>
 
-          <button className="footer-social-btn" aria-label="Developer link">
-            <Code2 size={22} />
-          </button>
+          <a
+            className="footer-social-btn"
+            href="mailto:jhawarsneha11@gmail.com"
+            aria-label="Email Support"
+          >
+            <Mail size={22} />
+          </a>
         </div>
       </div>
 
